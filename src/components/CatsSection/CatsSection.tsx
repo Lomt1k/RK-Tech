@@ -30,6 +30,8 @@ const CatsSection = () => {
   const intervalId = useRef<number | null>(null);
 
   const fetchNextCat = useCallback(async () => {
+    if (!isEnabled) return;
+
     try {
       const cat = await fetchRandomCat();
       setCat(cat);
@@ -38,7 +40,7 @@ const CatsSection = () => {
       console.error(error);
       setError("Не удалось загрузить котика :(");
     }
-  }, []);
+  }, [isEnabled]);
 
   useEffect(() => {
     if (isAutoRefresh) {
