@@ -5,7 +5,7 @@
   --color-bg: #111111;
   --color-link: #308E21;
   --color-active: #93c78b;
-
+  --color-error: #f54848;
 
   /* Transitions */
   --transition-200: 0.2s ease-in;
